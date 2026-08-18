@@ -3,245 +3,385 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Stillwork — Monthly social for BC craft spirits</title>
-  <meta name="description" content="On-site short-form video for BC distilleries, wineries, and cocktail bars. Compliant. Captioned. Ready to post. 19+." />
+  <title>Stillwork — Social for BC craft spirits</title>
+  <meta name="description" content="On-site short-form and a Chinese-language virtual host for BC distilleries, wineries, and bars. Compliant. Ready to post. 19+." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;1,500&family=Outfit:wght@400;500;600&display=swap" rel="stylesheet" />
   <style>
     :root {
-      --ink: #1c1915;
-      --muted: #5c564c;
-      --paper: #f4efe6;
+      --ink: #1b1814;
+      --muted: #6a6358;
+      --paper: #f3eee4;
       --card: #fffdf8;
-      --line: #d4cbbc;
-      --forest: #3d4f3a;
-      --copper: #b8793a;
+      --line: #d7cdb8;
+      --forest: #3a4a36;
+      --forest-2: #2c3929;
+      --copper: #b56a2d;
       --white: #fffdf8;
     }
     * { box-sizing: border-box; }
     html { scroll-behavior: smooth; }
     body {
       margin: 0;
-      font-family: "Iowan Old Style", "Palatino Linotype", Palatino, Georgia, serif;
+      font-family: Outfit, "Segoe UI", sans-serif;
       color: var(--ink);
       background: var(--paper);
-      line-height: 1.55;
+      line-height: 1.5;
     }
-    .sans { font-family: "Avenir Next", "Segoe UI", Helvetica, Arial, sans-serif; }
+    img, video { display: block; max-width: 100%; }
     a { color: var(--forest); }
     header {
       display: flex;
       justify-content: space-between;
       align-items: center;
-      padding: 20px 7vw;
-      border-bottom: 1px solid var(--line);
+      padding: 16px 6vw;
       position: sticky;
       top: 0;
-      background: rgba(244,239,230,.92);
-      backdrop-filter: blur(10px);
-      z-index: 10;
+      z-index: 20;
+      background: rgba(243,238,228,.9);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid var(--line);
     }
     .logo {
-      font-weight: 700;
-      letter-spacing: .14em;
+      letter-spacing: .18em;
       text-transform: uppercase;
-      font-size: 13px;
+      font-size: 12px;
+      font-weight: 600;
       color: var(--forest);
       text-decoration: none;
     }
+    nav { display: flex; gap: 22px; align-items: center; font-size: 13px; }
+    nav a { text-decoration: none; color: var(--ink); }
     .nav-cta {
       background: var(--forest);
       color: var(--white);
+      padding: 9px 14px;
       text-decoration: none;
-      padding: 10px 16px;
-      font-size: 13px;
-      letter-spacing: .04em;
     }
-    .hero { padding: 72px 7vw 40px; max-width: 1100px; }
+    .hero {
+      display: grid;
+      grid-template-columns: 1.05fr .95fr;
+      gap: 48px;
+      align-items: center;
+      padding: 56px 6vw 40px;
+      max-width: 1240px;
+    }
     .eyebrow {
       color: var(--copper);
       letter-spacing: .16em;
       text-transform: uppercase;
-      font-size: 12px;
-      font-weight: 700;
-      margin: 0 0 14px;
+      font-size: 11px;
+      font-weight: 600;
+      margin: 0 0 12px;
     }
     h1 {
-      font-size: clamp(36px, 6vw, 64px);
-      line-height: 1.05;
-      margin: 0 0 18px;
+      font-family: "Cormorant Garamond", Georgia, serif;
+      font-size: clamp(40px, 6vw, 68px);
+      line-height: .98;
       font-weight: 500;
-      max-width: 16ch;
+      margin: 0 0 18px;
     }
-    .lead { font-size: 20px; color: var(--muted); max-width: 42ch; margin: 0 0 28px; }
-    .actions { display: flex; gap: 12px; flex-wrap: wrap; }
+    h1 em { font-style: italic; color: var(--forest); }
+    .lead { font-size: 18px; color: var(--muted); max-width: 38ch; margin: 0 0 26px; }
+    .actions { display: flex; gap: 10px; flex-wrap: wrap; }
     .btn {
       display: inline-block;
       text-decoration: none;
-      padding: 13px 18px;
-      font-size: 14px;
+      padding: 12px 16px;
+      font-size: 13px;
     }
     .btn.primary { background: var(--forest); color: var(--white); }
     .btn.ghost { border: 1px solid var(--ink); color: var(--ink); }
-    section { padding: 56px 7vw; }
-    h2 { font-size: 32px; font-weight: 500; margin: 0 0 20px; }
-    .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 16px; }
+    .hero-visual { position: relative; min-height: 520px; }
+    .hero-visual img.portrait {
+      width: 62%;
+      margin-left: auto;
+      border: 1px solid var(--line);
+      object-fit: cover;
+      aspect-ratio: 3/4;
+    }
+    .hero-visual img.still {
+      position: absolute;
+      left: 0; bottom: 8%;
+      width: 46%;
+      border: 1px solid var(--line);
+      box-shadow: 0 18px 40px rgba(28,25,21,.18);
+    }
+    .note {
+      font-size: 12px;
+      color: var(--muted);
+      margin-top: 14px;
+    }
+    section { padding: 64px 6vw; }
+    h2 {
+      font-family: "Cormorant Garamond", Georgia, serif;
+      font-size: clamp(28px, 4vw, 42px);
+      font-weight: 500;
+      margin: 0 0 10px;
+    }
+    .sub { color: var(--muted); max-width: 56ch; margin: 0 0 28px; }
+    .work {
+      display: grid;
+      grid-template-columns: 1.2fr 1fr 1fr;
+      grid-template-rows: auto auto;
+      gap: 10px;
+    }
+    .work figure { margin: 0; position: relative; overflow: hidden; background: #111; }
+    .work img, .work video {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      aspect-ratio: 3/4;
+    }
+    .work .wide { grid-row: span 2; }
+    .work .wide img { aspect-ratio: auto; height: 100%; min-height: 100%; }
+    .work figcaption {
+      position: absolute;
+      left: 0; right: 0; bottom: 0;
+      padding: 10px 12px;
+      font-size: 11px;
+      letter-spacing: .04em;
+      color: #f4efe6;
+      background: linear-gradient(transparent, rgba(0,0,0,.65));
+    }
+    .spec-flag {
+      display: inline-block;
+      background: var(--copper);
+      color: #fff;
+      font-size: 10px;
+      letter-spacing: .12em;
+      text-transform: uppercase;
+      padding: 3px 7px;
+      margin-bottom: 8px;
+    }
+    .grid3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 14px; }
     .card {
       background: var(--card);
       border: 1px solid var(--line);
       padding: 22px;
     }
-    .card h3 { margin: 0 0 8px; font-size: 20px; font-weight: 500; }
-    .card p, .card li { color: var(--muted); }
-    .price { font-size: 28px; color: var(--forest); margin: 8px 0 12px; }
-    .price span { font-size: 14px; color: var(--muted); }
-    .dark { background: var(--forest); color: var(--paper); }
-    .dark h2, .dark h3 { color: var(--paper); }
-    .dark p, .dark li { color: #d7dece; }
-    .dark .card { background: #334230; border-color: #52664e; }
+    .card h3 {
+      font-family: "Cormorant Garamond", Georgia, serif;
+      font-size: 26px;
+      font-weight: 500;
+      margin: 6px 0 8px;
+    }
+    .price { font-size: 28px; color: var(--forest); margin: 0 0 12px; }
+    .price span { font-size: 13px; color: var(--muted); }
+    .card ul { padding-left: 1.1em; color: var(--muted); margin: 0; }
+    .card li { margin: 5px 0; }
+    .dark { background: var(--forest-2); color: var(--paper); }
+    .dark h2 { color: var(--paper); }
+    .dark .sub, .dark .card li, .dark .card p { color: #c9d0c2; }
+    .dark .card { background: #364532; border-color: #4d6148; }
+    .dark .price { color: #e8d5b5; }
+    .split { display: grid; grid-template-columns: 1fr 1fr; gap: 28px; align-items: start; }
     table { width: 100%; border-collapse: collapse; background: var(--card); }
-    th, td { text-align: left; padding: 12px 14px; border-bottom: 1px solid var(--line); font-size: 15px; }
+    th, td { text-align: left; padding: 12px 14px; border-bottom: 1px solid var(--line); font-size: 14px; }
     th { background: var(--forest); color: var(--paper); font-weight: 500; }
+    .caption-ex {
+      background: var(--card);
+      border-left: 3px solid var(--copper);
+      padding: 14px 16px;
+      color: var(--muted);
+      font-size: 14px;
+    }
     .cta-box {
       background: var(--card);
       border: 2px solid var(--forest);
       padding: 28px;
-      max-width: 640px;
+      max-width: 680px;
     }
     footer {
-      padding: 28px 7vw 48px;
+      padding: 28px 6vw 48px;
       color: var(--muted);
-      font-size: 13px;
+      font-size: 12px;
       border-top: 1px solid var(--line);
     }
-    ul { padding-left: 1.15em; }
-    li { margin: 6px 0; }
+    @media (max-width: 860px) {
+      .hero, .work, .grid3, .split { grid-template-columns: 1fr; }
+      .hero-visual { min-height: 0; }
+      .hero-visual img.portrait { width: 100%; }
+      .hero-visual img.still { position: static; width: 100%; margin-top: 10px; }
+      nav { display: none; }
+      header .nav-cta { display: inline-block; }
+    }
   </style>
 </head>
 <body>
   <header>
     <a class="logo" href="#top">Stillwork</a>
-    <a class="nav-cta sans" href="#book">Book a 15-min call</a>
+    <nav>
+      <a href="#work">Work</a>
+      <a href="#offer">Offer</a>
+      <a href="#host">小岸</a>
+      <a href="bc-liquor-social-checklist.pdf">Checklist</a>
+      <a class="nav-cta" href="#book">Book a pilot</a>
+    </nav>
   </header>
 
   <main id="top">
     <section class="hero">
-      <p class="eyebrow sans">BC craft spirits · 19+</p>
-      <h1>Your liquid is ready. Your Instagram is not.</h1>
-      <p class="lead">
-        Stillwork films, edits, and captions monthly short-form for BC distilleries,
-        wineries, and bars — written to stay onside of liquor ad rules.
-      </p>
-      <div class="actions sans">
-        <a class="btn primary" href="#book">Start with a $1,200 pilot</a>
-        <a class="btn ghost" href="#offer">See packages</a>
+      <div>
+        <p class="eyebrow">British Columbia · 19+</p>
+        <h1>Your liquid is ready.<br /><em>The feed is not.</em></h1>
+        <p class="lead">
+          Stillwork makes monthly short-form for BC distilleries, wineries, and bars —
+          filmed on site, or spoken in Chinese by a virtual host, written to stay onside of liquor ad rules.
+        </p>
+        <div class="actions">
+          <a class="btn primary" href="#book">Start with a $1,200 pilot</a>
+          <a class="btn ghost" href="#work">See the spec pack</a>
+        </div>
+        <p class="note">No invented case studies. The work below is ours. The first paid shoot becomes the first client story.</p>
+      </div>
+      <div class="hero-visual">
+        <img class="portrait" src="assets/coast-01.jpg" alt="小岸, virtual host — spec" />
+        <img class="still" src="assets/copper.jpg" alt="Copper stills" />
       </div>
     </section>
 
-    <section>
-      <h2>The problem I keep seeing</h2>
-      <div class="grid">
-        <article class="card">
-          <h3>Beautiful bottle, dead grid</h3>
-          <p>Owners are on the still, not in CapCut. Posts happen in bursts, then silence for three weeks.</p>
-        </article>
-        <article class="card">
-          <h3>One pretty shoot, never used</h3>
-          <p>A photographer comes once. The files sit in a Drive folder. Tourism season arrives with nothing to post.</p>
-        </article>
-        <article class="card">
-          <h3>Rules nobody wants to read</h3>
-          <p>BC + platform alcohol rules are easy to trip over. “Party harder” captions are not a strategy.</p>
-        </article>
+    <section id="work">
+      <p class="eyebrow">Work</p>
+      <h2>A finished spec pack. Not a moodboard.</h2>
+      <p class="sub">
+        <span class="spec-flag">Spec · not a client</span><br />
+        Ten verticals for <strong>小岸 / Coast</strong> — a virtual host who talks to Metro Vancouver’s Chinese-speaking guests.
+        Same face, 19+ endcards, no “drink more.” This is the craft we sell.
+      </p>
+      <div class="work">
+        <figure class="wide">
+          <img src="assets/coast-yvr.jpg" alt="小岸 at the still" />
+          <figcaption>YVR still · “今晚一杯就好”</figcaption>
+        </figure>
+        <figure>
+          <video src="assets/clip-intro.mp4" muted autoplay loop playsinline poster="assets/coast-01.jpg"></video>
+          <figcaption>Intro · 6s motion</figcaption>
+        </figure>
+        <figure>
+          <img src="assets/coast-10.jpg" alt="Chinese guests are looking for you" />
+          <figcaption>B2B cut · 华语客人在找你</figcaption>
+        </figure>
+        <figure>
+          <img src="assets/okanagan.jpg" alt="Okanagan glass at sunset" />
+          <figcaption>Okanagan · tourism still</figcaption>
+        </figure>
+        <figure>
+          <img src="assets/negroni.jpg" alt="Negroni hero" />
+          <figcaption>Serve · food-safe hero</figcaption>
+        </figure>
+      </div>
+      <div class="split" style="margin-top:28px">
+        <div>
+          <h3 style="font-family:'Cormorant Garamond',serif;font-weight:500;font-size:24px;margin:0 0 8px;">What a caption sounds like</h3>
+          <p class="caption-ex">
+            先冰杯。约会别比谁贵，要比你能不能十秒讲完一个故事。柑橘向的 gin，桌上放水，也放一点小食。今晚一杯就好。<br />
+            <span style="color:#1b1814">19+ · 虚拟角色 · 请理性饮酒</span>
+          </p>
+        </div>
+        <div>
+          <video src="assets/clip-b2b.mp4" muted autoplay loop playsinline controls poster="assets/coast-10.jpg" style="width:100%;border:1px solid var(--line)"></video>
+          <p class="note">B2B vertical — the line a tasting-room manager can forward to the owner.</p>
+        </div>
       </div>
     </section>
 
     <section id="offer" class="dark">
-      <h2>What you buy</h2>
-      <div class="grid">
+      <p class="eyebrow">What you buy</p>
+      <h2>Two products. One studio.</h2>
+      <p class="sub">Start with the pilot. Add the Chinese host if you actually get those guests.</p>
+      <div class="grid3">
         <article class="card">
-          <p class="eyebrow sans">First job</p>
+          <p class="eyebrow">First job</p>
           <h3>Pilot shoot</h3>
           <p class="price">$1,200 <span>CAD</span></p>
           <ul>
             <li>3 hours on site</li>
             <li>8 short videos, edited + captioned</li>
             <li>8 stills</li>
-            <li>Compliance pass before delivery</li>
-            <li>Organic social usage, 1 year</li>
+            <li>Compliance pass</li>
+            <li>Organic use, 1 year</li>
           </ul>
-          <p>$400 credited if you start a monthly Still Pack within 14 days.</p>
+          <p>$400 credited if you start a Still Pack within 14 days.</p>
         </article>
         <article class="card">
-          <p class="eyebrow sans">The retainer</p>
+          <p class="eyebrow">The retainer</p>
           <h3>Still Pack</h3>
           <p class="price">$2,200 <span>/ month</span></p>
           <ul>
             <li>10 short-form videos</li>
             <li>8 static posts</li>
             <li>Captions + CTAs</li>
-            <li>One-month content calendar</li>
+            <li>One-month calendar</li>
             <li>Monthly or quarterly banked shoot</li>
           </ul>
         </article>
-        <article class="card">
-          <p class="eyebrow sans">If you already post</p>
-          <h3>Content audit</h3>
-          <p class="price">$450 <span>one-time</span></p>
+        <article class="card" id="host">
+          <p class="eyebrow">Add-on</p>
+          <h3>小岸 host pack</h3>
+          <p class="price">$1,200 <span>spec already built</span></p>
           <ul>
-            <li>Last 30–60 days reviewed</li>
-            <li>Compliance risk flags</li>
-            <li>10 specific fixes</li>
-            <li>30-minute call</li>
+            <li>Chinese-language verticals</li>
+            <li>Same host, your bottle + room</li>
+            <li>19+ / 理性饮酒 endcards</li>
+            <li>For Metro Van + wine-country guests</li>
           </ul>
+          <p>We do not sell alcohol. You stay the advertiser of record.</p>
         </article>
       </div>
     </section>
 
     <section>
-      <h2>How a pilot day runs</h2>
-      <table class="sans">
+      <p class="eyebrow">How a pilot runs</p>
+      <h2>One afternoon. Eight posts.</h2>
+      <table>
         <tr><th>When</th><th>What happens</th></tr>
         <tr><td>Before</td><td>Shot list + 19+ / food-in-frame plan. You confirm licence and claims.</td></tr>
-        <tr><td>On site</td><td>3 hours. Still, bar, bottle, people (25+), tasting room. No “get wasted” energy.</td></tr>
-        <tr><td>After</td><td>8 videos + 8 stills in 7 days. One revision round. You post, or I schedule with you.</td></tr>
+        <tr><td>On site</td><td>3 hours. Still, bottle, people (25+), tasting room. No “get wasted” energy.</td></tr>
+        <tr><td>After</td><td>8 videos + 8 stills in 7 days. One revision. You post, or we schedule with you.</td></tr>
       </table>
     </section>
 
     <section>
-      <h2>Why this is not a generic social agency</h2>
-      <div class="grid">
-        <article class="card">
-          <h3>Liquor-only</h3>
-          <p>I do not also do dentists and gyms. The checklist is built for BC craft and cocktail rooms.</p>
-        </article>
-        <article class="card">
-          <h3>Compliance is in the price</h3>
-          <p>Age cues, food in frame, no health claims, no liquor-as-status. You stay the advertiser of record.</p>
-        </article>
-        <article class="card">
-          <h3>Chinese + English if you want it</h3>
-          <p>Metro Vancouver and wine-country tourism include a large Chinese-speaking guest. I can deliver both.</p>
-        </article>
+      <div class="split">
+        <div>
+          <p class="eyebrow">Free</p>
+          <h2>The checklist we run before every post.</h2>
+          <p class="sub">19 things to check, and 5 that get craft brands in trouble. Not legal advice. Useful anyway.</p>
+          <a class="btn primary" href="bc-liquor-social-checklist.pdf">Download the PDF</a>
+        </div>
+        <div class="card">
+          <h3>We will not do</h3>
+          <ul>
+            <li>Kids in the tasting-room background</li>
+            <li>Health-halo botanicals</li>
+            <li>Keys, cars, boats next to a pour</li>
+            <li>Bottle giveaways as prizes</li>
+            <li>Unlabelled paid posts</li>
+          </ul>
+        </div>
       </div>
     </section>
 
     <section id="book">
       <div class="cta-box">
-        <p class="eyebrow sans">Next step</p>
+        <p class="eyebrow">Next</p>
         <h2>15 minutes. No deck.</h2>
-        <p>Tell me the bottle you’re proudest of. I’ll tell you three Reel ideas you could post this month — even if we never work together.</p>
-        <p class="sans">
-          Email <a href="mailto:chuanheng2013@gmail.com?subject=Stillwork%20pilot">chuanheng2013@gmail.com</a><br />
-          Phone [YOUR PHONE]
+        <p>Tell me the bottle you are proudest of. I will send three Reel ideas — even if we never work together.</p>
+        <p>
+          Heng · Stillwork<br />
+          <a href="mailto:chuanheng2013@gmail.com?subject=Stillwork%20pilot">chuanheng2013@gmail.com</a>
         </p>
-        <p class="sans"><a class="btn primary" href="mailto:chuanheng2013@gmail.com?subject=Stillwork%20pilot">Email to book</a></p>
+        <a class="btn primary" href="mailto:chuanheng2013@gmail.com?subject=Stillwork%20pilot">Email to book</a>
       </div>
     </section>
   </main>
 
-  <footer class="sans">
-    Stillwork · British Columbia · Entertainment / marketing services only · 19+ ·
-    Not legal advice. Confirm advertising rules with LCRB / Canadian alcohol ad codes before paid campaigns.
-    I do not sell alcohol.
+  <footer>
+    Stillwork · British Columbia · Marketing services only · 19+ ·
+    Spec work on this page is original (小岸). It is not a paid endorsement of any distillery.
+    Confirm advertising rules with LCRB / Canadian alcohol ad codes before paid campaigns.
+    We do not sell alcohol.
   </footer>
 </body>
 </html>
