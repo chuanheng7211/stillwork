@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Stillwork — Monthly social for BC craft spirits</title>
+  <meta name="description" content="On-site short-form video for BC distilleries, wineries, and cocktail bars. Compliant. Captioned. Ready to post. 19+." />
+  <style>
+    :root {
+      --ink: #1c1915;
+      --muted: #5c564c;
+      --paper: #f4efe6;
+      --card: #fffdf8;
+      --line: #d4cbbc;
+      --forest: #3d4f3a;
+      --copper: #b8793a;
+      --white: #fffdf8;
+    }
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      font-family: "Iowan Old Style", "Palatino Linotype", Palatino, Georgia, serif;
+      color: var(--ink);
+      background: var(--paper);
+      line-height: 1.55;
+    }
+    .sans { font-family: "Avenir Next", "Segoe UI", Helvetica, Arial, sans-serif; }
+    a { color: var(--forest); }
+    header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 20px 7vw;
+      border-bottom: 1px solid var(--line);
+      position: sticky;
+      top: 0;
+      background: rgba(244,239,230,.92);
+      backdrop-filter: blur(10px);
+      z-index: 10;
+    }
+    .logo {
+      font-weight: 700;
+      letter-spacing: .14em;
+      text-transform: uppercase;
+      font-size: 13px;
+      color: var(--forest);
+      text-decoration: none;
+    }
+    .nav-cta {
+      background: var(--forest);
+      color: var(--white);
+      text-decoration: none;
+      padding: 10px 16px;
+      font-size: 13px;
+      letter-spacing: .04em;
+    }
+    .hero { padding: 72px 7vw 40px; max-width: 1100px; }
+    .eyebrow {
+      color: var(--copper);
+      letter-spacing: .16em;
+      text-transform: uppercase;
+      font-size: 12px;
+      font-weight: 700;
+      margin: 0 0 14px;
+    }
+    h1 {
+      font-size: clamp(36px, 6vw, 64px);
+      line-height: 1.05;
+      margin: 0 0 18px;
+      font-weight: 500;
+      max-width: 16ch;
+    }
+    .lead { font-size: 20px; color: var(--muted); max-width: 42ch; margin: 0 0 28px; }
+    .actions { display: flex; gap: 12px; flex-wrap: wrap; }
+    .btn {
+      display: inline-block;
+      text-decoration: none;
+      padding: 13px 18px;
+      font-size: 14px;
+    }
+    .btn.primary { background: var(--forest); color: var(--white); }
+    .btn.ghost { border: 1px solid var(--ink); color: var(--ink); }
+    section { padding: 56px 7vw; }
+    h2 { font-size: 32px; font-weight: 500; margin: 0 0 20px; }
+    .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 16px; }
+    .card {
+      background: var(--card);
+      border: 1px solid var(--line);
+      padding: 22px;
+    }
+    .card h3 { margin: 0 0 8px; font-size: 20px; font-weight: 500; }
+    .card p, .card li { color: var(--muted); }
+    .price { font-size: 28px; color: var(--forest); margin: 8px 0 12px; }
+    .price span { font-size: 14px; color: var(--muted); }
+    .dark { background: var(--forest); color: var(--paper); }
+    .dark h2, .dark h3 { color: var(--paper); }
+    .dark p, .dark li { color: #d7dece; }
+    .dark .card { background: #334230; border-color: #52664e; }
+    table { width: 100%; border-collapse: collapse; background: var(--card); }
+    th, td { text-align: left; padding: 12px 14px; border-bottom: 1px solid var(--line); font-size: 15px; }
+    th { background: var(--forest); color: var(--paper); font-weight: 500; }
+    .cta-box {
+      background: var(--card);
+      border: 2px solid var(--forest);
+      padding: 28px;
+      max-width: 640px;
+    }
+    footer {
+      padding: 28px 7vw 48px;
+      color: var(--muted);
+      font-size: 13px;
+      border-top: 1px solid var(--line);
+    }
+    ul { padding-left: 1.15em; }
+    li { margin: 6px 0; }
+  </style>
+</head>
+<body>
+  <header>
+    <a class="logo" href="#top">Stillwork</a>
+    <a class="nav-cta sans" href="#book">Book a 15-min call</a>
+  </header>
+
+  <main id="top">
+    <section class="hero">
+      <p class="eyebrow sans">BC craft spirits · 19+</p>
+      <h1>Your liquid is ready. Your Instagram is not.</h1>
+      <p class="lead">
+        Stillwork films, edits, and captions monthly short-form for BC distilleries,
+        wineries, and bars — written to stay onside of liquor ad rules.
+      </p>
+      <div class="actions sans">
+        <a class="btn primary" href="#book">Start with a $1,200 pilot</a>
+        <a class="btn ghost" href="#offer">See packages</a>
+      </div>
+    </section>
+
+    <section>
+      <h2>The problem I keep seeing</h2>
+      <div class="grid">
+        <article class="card">
+          <h3>Beautiful bottle, dead grid</h3>
+          <p>Owners are on the still, not in CapCut. Posts happen in bursts, then silence for three weeks.</p>
+        </article>
+        <article class="card">
+          <h3>One pretty shoot, never used</h3>
+          <p>A photographer comes once. The files sit in a Drive folder. Tourism season arrives with nothing to post.</p>
+        </article>
+        <article class="card">
+          <h3>Rules nobody wants to read</h3>
+          <p>BC + platform alcohol rules are easy to trip over. “Party harder” captions are not a strategy.</p>
+        </article>
+      </div>
+    </section>
+
+    <section id="offer" class="dark">
+      <h2>What you buy</h2>
+      <div class="grid">
+        <article class="card">
+          <p class="eyebrow sans">First job</p>
+          <h3>Pilot shoot</h3>
+          <p class="price">$1,200 <span>CAD</span></p>
+          <ul>
+            <li>3 hours on site</li>
+            <li>8 short videos, edited + captioned</li>
+            <li>8 stills</li>
+            <li>Compliance pass before delivery</li>
+            <li>Organic social usage, 1 year</li>
+          </ul>
+          <p>$400 credited if you start a monthly Still Pack within 14 days.</p>
+        </article>
+        <article class="card">
+          <p class="eyebrow sans">The retainer</p>
+          <h3>Still Pack</h3>
+          <p class="price">$2,200 <span>/ month</span></p>
+          <ul>
+            <li>10 short-form videos</li>
+            <li>8 static posts</li>
+            <li>Captions + CTAs</li>
+            <li>One-month content calendar</li>
+            <li>Monthly or quarterly banked shoot</li>
+          </ul>
+        </article>
+        <article class="card">
+          <p class="eyebrow sans">If you already post</p>
+          <h3>Content audit</h3>
+          <p class="price">$450 <span>one-time</span></p>
+          <ul>
+            <li>Last 30–60 days reviewed</li>
+            <li>Compliance risk flags</li>
+            <li>10 specific fixes</li>
+            <li>30-minute call</li>
+          </ul>
+        </article>
+      </div>
+    </section>
+
+    <section>
+      <h2>How a pilot day runs</h2>
+      <table class="sans">
+        <tr><th>When</th><th>What happens</th></tr>
+        <tr><td>Before</td><td>Shot list + 19+ / food-in-frame plan. You confirm licence and claims.</td></tr>
+        <tr><td>On site</td><td>3 hours. Still, bar, bottle, people (25+), tasting room. No “get wasted” energy.</td></tr>
+        <tr><td>After</td><td>8 videos + 8 stills in 7 days. One revision round. You post, or I schedule with you.</td></tr>
+      </table>
+    </section>
+
+    <section>
+      <h2>Why this is not a generic social agency</h2>
+      <div class="grid">
+        <article class="card">
+          <h3>Liquor-only</h3>
+          <p>I do not also do dentists and gyms. The checklist is built for BC craft and cocktail rooms.</p>
+        </article>
+        <article class="card">
+          <h3>Compliance is in the price</h3>
+          <p>Age cues, food in frame, no health claims, no liquor-as-status. You stay the advertiser of record.</p>
+        </article>
+        <article class="card">
+          <h3>Chinese + English if you want it</h3>
+          <p>Metro Vancouver and wine-country tourism include a large Chinese-speaking guest. I can deliver both.</p>
+        </article>
+      </div>
+    </section>
+
+    <section id="book">
+      <div class="cta-box">
+        <p class="eyebrow sans">Next step</p>
+        <h2>15 minutes. No deck.</h2>
+        <p>Tell me the bottle you’re proudest of. I’ll tell you three Reel ideas you could post this month — even if we never work together.</p>
+        <p class="sans">
+          Email <a href="mailto:chuanheng2013@gmail.com?subject=Stillwork%20pilot">chuanheng2013@gmail.com</a><br />
+          Phone [YOUR PHONE]
+        </p>
+        <p class="sans"><a class="btn primary" href="mailto:chuanheng2013@gmail.com?subject=Stillwork%20pilot">Email to book</a></p>
+      </div>
+    </section>
+  </main>
+
+  <footer class="sans">
+    Stillwork · British Columbia · Entertainment / marketing services only · 19+ ·
+    Not legal advice. Confirm advertising rules with LCRB / Canadian alcohol ad codes before paid campaigns.
+    I do not sell alcohol.
+  </footer>
+</body>
+</html>
